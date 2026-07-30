@@ -1,15 +1,16 @@
-# RecruitSystem
+# RecruitSystem v2
 
-모바일 면접지원서 프로젝트입니다.
+모바일 면접지원서 디자인 개선판입니다.
 
-## 파일
-- index.html: 지원서 화면
-- style.css: 디자인
-- script.js: Google Apps Script 전송
-- privacy.html: 개인정보 안내
-- thankyou.html: 제출 완료 화면
+## 변경 사항
+- 모바일 UI 전면 개선
+- 회사명/브랜드 영역 추가
+- 입력 내용 임시저장
+- 휴대폰 번호 자동 하이픈
+- 글자 수 표시
+- 제출 전 재확인
+- 기존 Google Sheets 저장 구조 유지
 
-## 주의
-1. GitHub Pages를 켠 뒤 실제 휴대폰에서 시험 제출하세요.
-2. Google 스프레드시트에 한 줄이 추가되는지 반드시 확인하세요.
-3. 개인정보 안내 문구는 실제 회사 정책에 맞게 검토하세요.
+## 적용
+압축을 풀고 기존 RecruitSystem 폴더에 5개 파일을 덮어쓴 뒤,
+GitHub Desktop에서 커밋하고 Push origin을 누르세요.
