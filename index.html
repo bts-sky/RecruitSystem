@@ -3,145 +3,142 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0f4c81">
-  <title>면접지원서</title>
+  <meta name="theme-color" content="#0a64c0">
+  <title>(주)하늘컴퍼니 모바일 채용지원</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <div class="brand-mark">HC</div>
-        <div>
-          <strong>하늘컴퍼니</strong>
-          <small>모바일 채용지원</small>
-        </div>
-      </div>
-      <span class="secure">🔒 안전한 접수</span>
-    </div>
-  </header>
+  <main class="app-shell">
+    <section id="landing" class="screen active landing">
+      <img src="assets/logo.png" alt="(주)하늘컴퍼니 로고" class="main-logo">
+      <p class="eyebrow">MOBILE RECRUIT</p>
+      <h1>모바일 채용지원</h1>
+      <p class="lead">약 3분이면 작성할 수 있습니다.</p>
 
-  <main class="wrap">
-    <section class="intro">
-      <p class="kicker">RECRUIT APPLICATION</p>
-      <h1>면접지원서</h1>
-      <p>입력하신 정보는 채용 검토와 면접 안내 목적으로만 사용됩니다.</p>
-      <div class="steps" aria-label="작성 단계">
-        <div class="step active"><b>1</b><span>기본정보</span></div>
-        <div class="line"></div>
-        <div class="step"><b>2</b><span>지원정보</span></div>
-        <div class="line"></div>
-        <div class="step"><b>3</b><span>제출</span></div>
+      <div class="benefits">
+        <div><span>✍️</span><b>간편 작성</b><small>휴대폰으로 빠르게</small></div>
+        <div><span>🔒</span><b>안심 지원</b><small>채용 목적으로만 사용</small></div>
+        <div><span>⚡</span><b>빠른 접수</b><small>제출 즉시 접수 완료</small></div>
       </div>
+
+      <button type="button" class="primary large" id="startButton">
+        지원서 작성 시작하기 <span>→</span>
+      </button>
+
+      <div class="step-preview">
+        <div class="preview-item active"><b>1</b><span>기본정보</span></div>
+        <div class="preview-line"></div>
+        <div class="preview-item"><b>2</b><span>지원정보</span></div>
+        <div class="preview-line"></div>
+        <div class="preview-item"><b>3</b><span>경력사항</span></div>
+        <div class="preview-line"></div>
+        <div class="preview-item"><b>4</b><span>제출완료</span></div>
+      </div>
+
+      <p class="privacy-note">🔒 입력하신 정보는 채용 목적 외에는 사용되지 않습니다.</p>
     </section>
 
-    <form id="applicationForm" class="form-card" novalidate>
-      <section class="section">
-        <div class="section-title">
-          <span class="section-no">01</span>
-          <div>
-            <h2>기본정보</h2>
-            <p>지원자 본인의 정보를 정확하게 입력해 주세요.</p>
-          </div>
-        </div>
+    <section id="formScreen" class="screen">
+      <header class="form-header">
+        <img src="assets/logo.png" alt="(주)하늘컴퍼니 로고" class="header-logo">
+        <button type="button" class="text-button" id="backToHome">처음으로</button>
+      </header>
 
-        <div class="grid two">
+      <div class="progress-wrap">
+        <div class="progress-top">
+          <strong id="stepTitle">1. 기본정보</strong>
+          <span id="stepCounter">1 / 4</span>
+        </div>
+        <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+      </div>
+
+      <form id="applicationForm" novalidate>
+        <section class="form-step active" data-step="1">
+          <h2>기본정보</h2>
+          <p class="section-help">지원자 본인의 정보를 정확히 입력해 주세요.</p>
+
           <label class="field">
-            <span>성명 <em>필수</em></span>
-            <input name="name" type="text" maxlength="30" autocomplete="name" required placeholder="예: 홍길동">
+            <span>이름 <em>*</em></span>
+            <input name="name" type="text" maxlength="30" autocomplete="name" required placeholder="이름을 입력해 주세요">
           </label>
 
           <label class="field">
-            <span>연락처 <em>필수</em></span>
+            <span>연락처 <em>*</em></span>
             <input name="phone" type="tel" inputmode="numeric" maxlength="13" autocomplete="tel" required placeholder="010-1234-5678">
           </label>
-        </div>
 
-        <div class="grid two">
           <label class="field">
-            <span>생년월일 <em>필수</em></span>
+            <span>생년월일 <em>*</em></span>
             <input name="birthDate" type="date" required>
           </label>
 
           <label class="field">
-            <span>주소 <em>필수</em></span>
-            <input name="address" type="text" maxlength="120" autocomplete="street-address" required placeholder="현재 거주지역">
+            <span>주소 <em>*</em></span>
+            <input name="address" type="text" maxlength="120" autocomplete="street-address" required placeholder="현재 거주지를 입력해 주세요">
           </label>
-        </div>
-      </section>
+        </section>
 
-      <section class="section">
-        <div class="section-title">
-          <span class="section-no">02</span>
-          <div>
-            <h2>지원정보</h2>
-            <p>지원 분야와 근무 희망 정보를 작성해 주세요.</p>
-          </div>
-        </div>
+        <section class="form-step" data-step="2">
+          <h2>지원정보</h2>
+          <p class="section-help">희망하는 지원 분야와 근무지를 입력해 주세요.</p>
 
-        <div class="grid two">
           <label class="field">
-            <span>지원분야 <em>필수</em></span>
+            <span>지원분야 <em>*</em></span>
             <input name="position" type="text" maxlength="50" required placeholder="예: 생산 / 조립 / 검사">
           </label>
 
           <label class="field">
-            <span>희망근무지 <em>필수</em></span>
+            <span>희망근무지 <em>*</em></span>
             <input name="workLocation" type="text" maxlength="80" required placeholder="예: 천안 / 화성 / 전주">
           </label>
+        </section>
+
+        <section class="form-step" data-step="3">
+          <h2>경력사항</h2>
+          <p class="section-help">해당되는 내용을 자유롭게 작성해 주세요.</p>
+
+          <label class="field">
+            <span>최종학력</span>
+            <textarea name="education" rows="4" maxlength="500" placeholder="예: ○○고등학교 졸업"></textarea>
+          </label>
+
+          <label class="field">
+            <span>경력사항</span>
+            <textarea name="career" rows="6" maxlength="1500" placeholder="회사명, 근무기간, 담당업무를 작성해 주세요. 경력이 없으면 '신입'이라고 적어 주세요."></textarea>
+          </label>
+
+          <label class="field">
+            <span>자기소개 및 특이사항</span>
+            <textarea name="introduction" rows="6" maxlength="2000" placeholder="지원동기, 장점, 출근 가능일 등을 작성해 주세요."></textarea>
+          </label>
+        </section>
+
+        <section class="form-step" data-step="4">
+          <h2>확인 및 제출</h2>
+          <p class="section-help">아래 내용을 확인한 뒤 제출해 주세요.</p>
+
+          <div id="reviewBox" class="review-box"></div>
+
+          <label class="consent">
+            <input name="privacyAgreement" type="checkbox" required>
+            <span><a href="privacy.html" target="_blank" rel="noopener">개인정보 수집·이용 안내</a>를 확인했으며 이에 동의합니다. <em>*</em></span>
+          </label>
+
+          <div id="message" class="message" role="status" aria-live="polite"></div>
+        </section>
+
+        <div class="nav-buttons">
+          <button type="button" class="secondary" id="prevButton">이전</button>
+          <button type="button" class="primary" id="nextButton">다음</button>
+          <button type="submit" class="primary" id="submitButton">지원서 제출하기</button>
         </div>
-
-        <label class="field">
-          <span>최종학력</span>
-          <textarea name="education" rows="3" maxlength="500" placeholder="예: ○○고등학교 졸업 / ○○대학교 중퇴"></textarea>
-          <small class="counter"><span data-count-for="education">0</span>/500</small>
-        </label>
-
-        <label class="field">
-          <span>경력사항</span>
-          <textarea name="career" rows="5" maxlength="1500" placeholder="회사명, 근무기간, 담당업무를 작성해 주세요. 경력이 없으면 '신입'이라고 적어 주세요."></textarea>
-          <small class="counter"><span data-count-for="career">0</span>/1500</small>
-        </label>
-
-        <label class="field">
-          <span>자기소개 및 특이사항</span>
-          <textarea name="introduction" rows="6" maxlength="2000" placeholder="지원동기, 장점, 출근 가능일, 기타 전달사항을 작성해 주세요."></textarea>
-          <small class="counter"><span data-count-for="introduction">0</span>/2000</small>
-        </label>
-      </section>
-
-      <section class="section compact">
-        <div class="section-title">
-          <span class="section-no">03</span>
-          <div>
-            <h2>동의 및 제출</h2>
-            <p>내용을 확인한 뒤 제출해 주세요.</p>
-          </div>
-        </div>
-
-        <label class="consent">
-          <input name="privacyAgreement" type="checkbox" required>
-          <span>
-            <a href="privacy.html" target="_blank" rel="noopener">개인정보 수집·이용 안내</a>를 확인했으며 이에 동의합니다.
-            <em>필수</em>
-          </span>
-        </label>
-
-        <div id="message" class="message" role="status" aria-live="polite"></div>
-
-        <button id="submitButton" class="submit" type="submit">
-          <span>지원서 제출하기</span>
-        </button>
-
-        <p class="submit-note">제출 후에는 수정이 어렵습니다. 입력 내용을 한 번 더 확인해 주세요.</p>
-      </section>
-    </form>
-
-    <footer>
-      <p>© 하늘컴퍼니 채용지원 시스템</p>
-    </footer>
+      </form>
+    </section>
   </main>
 
+  <script>
+    window.RECRUIT_ENDPOINT = "https://script.google.com/macros/s/AKfycbzhnszeo2PzyLazOq6wC_6-pBbkjXHqDs6g4f48rgEMrIj62uV8iWGlnhO26l-KZr1l/exec";
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
